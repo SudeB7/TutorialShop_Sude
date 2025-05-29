@@ -1,0 +1,30 @@
+@model TutorialShop.Models.Course
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="container mt-4">
+    <h2>@Model.Name</h2>
+    <img src="@Model.ImageUrl" class="img-fluid mb-3 w-25" alt="Course Image" />
+    <p><strong>Instructor:</strong> @Model.Instructor</p>
+    <p><strong>Price:</strong> $@Model.Price</p>
+    <p>
+        <strong>Difficulty:</strong>
+        <span class="text-warning">
+            @for (int i = 1; i <= 5; i++)
+            {
+                if (i <= Model.Difficulty)
+                {
+                    <text>★</text>
+                }
+                else
+                {
+                    <text>☆</text>
+                }
+            }
+        </span>
+    </p>
+    <p>@Model.Description</p>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-secondary mt-3">Back to Courses</a>
+</div>

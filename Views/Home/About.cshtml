@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "About Us";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+<h1>About TutorialShop</h1>
+
+<p>
+    Welcome to TutorialShop! We provide high-quality programming and computer science tutorials
+    to help learners at all levels enhance their skills. Our mission is to make learning
+    accessible, engaging, and practical.
+</p>
+
+<p>
+    Whether you’re just starting out or looking to deepen your expertise, our courses are
+    designed by experts to guide you every step of the way.
+</p>
+
+<hr />
+
+<h2>Contact Us</h2>
+
+<p>If you have any questions, suggestions, or feedback, please feel free to reach out!</p>
+
+<form method="post" action="/Home/Contact">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" required />
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" required />
+    </div>
+    <div class="mb-3">
+        <label for="Message" class="form-label">Message</label>
+        <textarea class="form-control" id="Message" name="Message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
